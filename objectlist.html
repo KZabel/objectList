@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object List</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body> 
+<header>
+	<h1>Computer Check-Out</h1> 
+</header>
+  <div style="display: block;" id="page1">
+      <button type="submit" id="addNew">New entry</button>
+      <table style="border: 1px solid black;">
+        <tbody>
+        <tr>
+          <th style="border: 1px solid black;">Computer name</th>
+          <th colspan="2" style="border: 1px solid black;">Checked out to</th>
+        </tr>
+          <tr>
+            <td style="border: 1px solid black;" id="name"></td>
+            <td style="border: 1px solid black;" colspan="2" id="person"></td>
+          </tr>
+        </tbody>
+    </table> 
+    </div>
+  <div id="page2" style="display: none;">
+     <form>
+       <h1>New Entry</h1>
+       <ul>
+        <li><label>Computer name</label>
+        <input type="number" id="the-number" /></li>
+        <li><label>Checked out to</label>
+        <input type="number" id="the-number" /></li>
+       </ul>
+     
+       <button type="submit" id="submit">Submit</button>
+    </form>
+  </div>
+
+<footer>
+</footer>
+<script>
+  $("#addNew").click(function(){
+    $("#page1").hide("slow", function(){
+       if(document.getElementById('page2').style.display==='none') { 
+      document.getElementById('page2').style.display='block';
+    };
+    });
+});
+
+  $("#submit").click(function(){
+    $("#page2").hide("slow", function(){
+      if(document.getElementById('page1').style.display==='block') {
+        document.getElementById('page1').style.display='block';
+      };
+    });
+});
+  
+  var compLog = {compName: "Pacific", compAssign: "Andrew"};
+  
+</script>
+	
+
+</body>
+</html>
